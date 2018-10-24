@@ -11,7 +11,7 @@ export class HomeComponent {
 
   title = 'Unit converter';
   statusSaida = 'alert-default';
-  valorRomano: string = '';
+  valorRomano: string = 'Program output';
   valorBinario: string = '';
 
   rForm: FormGroup;
