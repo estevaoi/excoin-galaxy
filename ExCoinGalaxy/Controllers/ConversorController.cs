@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ExCoinGalaxy.ViewModels;
-using ExCoinGalaxy.HelperModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ExCoinGalaxy.Controllers
@@ -15,6 +14,8 @@ namespace ExCoinGalaxy.Controllers
         private static string produtoR;
         private string prodR;
         private static int[] num;
+
+        public string Romano { get; set; }
 
         [HttpPost]
         [Route("post")]
@@ -44,7 +45,7 @@ namespace ExCoinGalaxy.Controllers
                     prodR += contents;
                 }
 
-                string numDecimal = ConverterRomanoDecimal(prodR);
+                string numDecimal = postFunction(prodR);
 
                 statusS = "alert-success";
                 valorR = produtos + " is: " + numDecimal + " (" + prodR + ")";
@@ -68,7 +69,7 @@ namespace ExCoinGalaxy.Controllers
 
                 string[] numIsol = prodR.TrimStart(' ').Split(' ');
 
-                string numDecimal = ConverterRomanoDecimal(numIsol[0]);
+                string numDecimal = postFunction(numIsol[0]);
 
                 int totalPecas = Convert.ToInt32(numDecimal);
                 int valorPecas = Convert.ToInt32(numIsol[1]);
@@ -155,7 +156,7 @@ namespace ExCoinGalaxy.Controllers
             return numero;
         }
 
-        private static string ConverterRomanoDecimal(string romano)
+        private static string postFunction(string romano)
         {
 
             if (romano.Contains("IIII") || romano.Contains("XXXX") || romano.Contains("CCCC") || romano.Contains("MMMM"))
@@ -211,6 +212,7 @@ namespace ExCoinGalaxy.Controllers
 
             return Convert.ToString(totalroman);
         }
+
 
     }
 }

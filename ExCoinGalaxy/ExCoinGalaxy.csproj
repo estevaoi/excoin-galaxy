@@ -20,8 +20,15 @@
 
   <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Compile Remove="HelperModels\**" />
     <Content Remove="$(SpaRoot)**" />
+    <Content Remove="HelperModels\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="HelperModels\**" />
+    <None Remove="HelperModels\**" />
   </ItemGroup>
 
   <ItemGroup>
