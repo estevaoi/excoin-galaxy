@@ -2,7 +2,7 @@
 
 Desafio "Merchant's Guide to Galaxy" implementada em C# com o ASP.NET Core na versão 0.1.
 
-![Alt text](Screenshot_2018-10-24ExCoinGalaxy.jpg "Title")
+![Alt text](Screenshot_ExCoinGalaxy.jpg "ExCoin Galaxy")
 
 
 ## Requisitos
